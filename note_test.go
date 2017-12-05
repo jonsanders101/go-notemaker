@@ -15,3 +15,14 @@ func TestNote(t *testing.T) {
 		t.Error("Did not instantiate with correct body")
 	}
 }
+
+func TestNotebook(t *testing.T) {
+	notebook := notebook{}
+	notebook.addNote("Favourite colours", "Magenta, Cerulean, Terrcotta")
+	length := len(notebook.notes)
+	note1 := notebook.notes[length-1]
+
+	if note1.title != "Favourite colours" {
+		t.Error("Expected a note to be in the notebook slice")
+	}
+}
