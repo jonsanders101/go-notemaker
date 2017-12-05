@@ -1,4 +1,6 @@
-package note
+package main
+
+import "fmt"
 
 type note struct {
 	title string
@@ -12,4 +14,8 @@ type notebook struct {
 func (notebook *notebook) addNote(newTitle string, newBody string) {
 	newNote := note{title: newTitle, body: newBody}
 	notebook.notes = append(notebook.notes, newNote)
+}
+
+func main() {
+	fmt.Println("Add a note!")
 }
